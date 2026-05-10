@@ -1,0 +1,283 @@
+:root {
+    --bg: #050505;
+    --card-bg: #111111;
+    --gold: #E8DBB3; 
+    --text-main: #FFFFFF;
+    --text-dim: #a0a0a0;
+    --glass: rgba(255, 255, 255, 0.03);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+.main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 10%;
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--glass);
+}
+
+.logo { 
+    font-weight: 800; 
+    letter-spacing: 2px; 
+    color: var(--gold); 
+    text-decoration: none; 
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 2rem; 
+}
+.nav-links a { 
+    color: var(--text-main); 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    font-weight: 300; 
+}
+/* Header buttons */
+.hero-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1rem;
+
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+
+}
+.hero-button {
+
+    background: var(--glass);
+
+    padding: 2rem;
+
+    border: 1px solid var(--glass);
+
+    transition: 0.3s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-main); 
+    text-decoration: none;
+}
+.description-block{
+    margin: 0 auto 3rem auto; 
+    max-width: 800px;
+
+}
+.hero-button:hover {
+
+    border-color: var(--gold);
+
+}
+
+/* Layout for New Pages */
+.container { 
+    padding: 8rem 10% 5rem; 
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    border-left: 4px solid var(--gold);
+    padding-left: 1rem;
+}
+
+/* Grid for Projects and Experience */
+.block-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 2rem;
+}
+.block-grid img{
+    width: 100%;
+    border-radius: 2px;
+}
+
+.card-block {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border: 1px solid var(--glass);
+    transition: 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    
+}
+
+.card-block:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.summary-wide {
+    grid-column: 1 / -1;
+    background: var(--glass);
+    padding: 2rem;
+    border-top: 1px solid var(--gold);
+    margin-top: 1rem;
+}
+
+/* Hero Styles */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #111 0%, #050505 100%);
+}
+
+.glitch-text { 
+    font-size: clamp(3rem, 8vw, 6rem); 
+    font-weight: 800;
+ }
+.tagline { 
+    color: var(--gold); 
+    text-transform: uppercase; 
+    letter-spacing: 5px; 
+    font-size: 0.8rem; 
+    margin-bottom: 3rem;
+ }
+
+/* About & Email Page Layout */
+.split-section {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 2px;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+.image-container img:hover { 
+    filter: grayscale(0%); 
+}
+.image-container-skills-image, .image-container-experience-image{
+    width: 100%;
+    border-radius: 2px;
+}
+
+.image-container-experience-image img:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    padding: 5rem 10%;
+    text-align: center;
+    background: var(--card-bg);
+}
+
+.contact-info { color: var(--gold); margin-bottom: 1rem; font-weight: bold; }
+.contact-links { display: flex; justify-content: center; gap: 3rem; }
+.contact-links a { color: var(--text-dim); text-decoration: none; }
+
+@media (max-width: 768px) {
+    .split-section { grid-template-columns: 1fr; }
+}
+/* additions */
+.cert-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cert-banner {
+    background: #1a1a1a;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid #333;
+    margin-top: 30px;
+    transition: transform 0.3s ease;
+}
+
+.cert-banner:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.cover-letter{
+    text-decoration: none;
+    color: inherit;
+}
+.cover-letter-banner{
+    background: #1a1a1a;
+    padding: 40px;
+    border: 1px solid var(--gold);
+    margin-top: 30px;
+    transition: transform 0.3s ease;
+}
+.cover-letter-banner p:nth-of-type(-n+1){
+    text-indent: 0;
+}
+.cover-letter-banner p:nth-of-type(n+2){
+    text-indent: 25px;
+}
+.cover-letter-banner p:nth-of-type(n+7){
+    text-indent: 0;
+}
+.space-paragraph-top{
+    margin-top: 3rem;
+}
+.space-paragraph-bottom{
+    margin-bottom: 3rem;
+}
+.word-highlight{
+    color: var(--gold);
+    font-weight: bold;
+}
+.word-highlight:hover{
+    font-style: italic;
+    transform: translateY(-5px);
+}
+
+.logo-grid {
+    display: flex;
+    justify-content: space-around; /* Spreads them out evenly */
+    align-items: center;           /* Centers them vertically */
+    flex-wrap: wrap;               /* Allows them to wrap on mobile */
+    gap: 2rem;                     /* Space between the images */
+    margin-bottom: 4rem;           /* Space before the "Who Am I" section */
+}
+.logo-grid img {
+    max-width: 150px;              /* Adjust this to make them bigger/smaller */
+    height: auto;                  /* Keeps aspect ratio */
+    object-fit: contain;
+}
+
